@@ -27,10 +27,8 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <!-- Plik/Folder 1 -->
             <RichTextBox x:Name="rtbFileOrFolder1" Grid.Column="0" Margin="10" IsReadOnly="True" VerticalScrollBarVisibility="Auto"/>
 
-            <!-- Plik/Folder 2 -->
             <RichTextBox x:Name="rtbFileOrFolder2" Grid.Column="1" Margin="10" IsReadOnly="True" VerticalScrollBarVisibility="Auto"/>
         </Grid>
     </Grid>
