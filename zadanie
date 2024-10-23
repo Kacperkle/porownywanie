@@ -1,0 +1,2 @@
+Diff viewer
+Aplikacja zaznacza różnice między dwoma plikami. Linie dodane w drugim pliku zaznaczane są na zielono, linie usunięte - na czerwono. Aplikacja pomija wyświetlanie takich samych linii (poza 3 liniami wokół różnicy). Można wspierać się bibliotekami NuGet.
