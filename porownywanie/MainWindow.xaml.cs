@@ -113,23 +113,16 @@ namespace DiffViewerApp
             {
                 var line = diffResult.Lines[i];
                 if (line.Type == ChangeType.Inserted || line.Type == ChangeType.Deleted || line.Type == ChangeType.Modified)
-                {
-                    // Display context lines above the difference
+                {  
                     for (int j = Math.Max(0, i - contextLines); j < i; j++)
                     {
                         AddLine(diffResult.Lines[j], rtbFileOrFolder1, rtbFileOrFolder2);
                     }
-
-                    // Display the difference line
                     AddLine(line, rtbFileOrFolder1, rtbFileOrFolder2);
-
-                    // Display context lines below the difference
                     for (int j = i + 1; j <= Math.Min(i + contextLines, diffResult.Lines.Count - 1); j++)
                     {
                         AddLine(diffResult.Lines[j], rtbFileOrFolder1, rtbFileOrFolder2);
                     }
-
-                    // Skip displayed context lines
                     i += contextLines;
                 }
             }
@@ -197,12 +190,8 @@ namespace DiffViewerApp
 
                 var diffBuilder = new InlineDiffBuilder(new Differ());
                 var diffResult = diffBuilder.BuildDiffModel(content1, content2);
-
-                // Show differences
                 ShowDifferencesWithContext(diffResult, 3);
             }
-
-            // Show files only present in one of the directories
             var onlyInFolder1 = files1.Select(Path.GetFileName).Except(files2.Select(Path.GetFileName));
             var onlyInFolder2 = files2.Select(Path.GetFileName).Except(files1.Select(Path.GetFileName));
 
